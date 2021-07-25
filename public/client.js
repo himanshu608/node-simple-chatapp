@@ -9,7 +9,7 @@ do{
     if(name.toLowerCase().indexOf('chotu') != -1){
         name =prompt("BETE APNA NAME TYPE KRLE");
     }
-}while(!name);
+}while(name.toLowerCase().indexOf('chotu') != -1 || !name );
 socket.emit('joined-chat',name);
 textarea.addEventListener('keyup',(e) =>{
     
