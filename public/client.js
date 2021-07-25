@@ -4,10 +4,11 @@ const messagearea = document.getElementById('chat-box');
 let name;
 
 do{
+    
+    name = prompt("Enter your name ");
     if(name.toLowerCase().indexOf('chotu') != -1){
         name =prompt("BETE APNA NAME TYPE KRLE");
     }
-    name = prompt("Enter your name ");
 }while(!name);
 socket.emit('joined-chat',name);
 textarea.addEventListener('keyup',(e) =>{
