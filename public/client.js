@@ -5,6 +5,9 @@ let name;
 
 do{
     name = prompt("Enter your name ");
+    if(name.toLowerCase().indexOf('chotu')!=-1){
+        name = prompt("Bete name sahi type kar ");
+    }
 }while(!name);
 socket.emit('joined-chat',name);
 textarea.addEventListener('keyup',(e) =>{
