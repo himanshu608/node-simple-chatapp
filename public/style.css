@@ -78,6 +78,7 @@ body h1{
     width: 300px;
     margin:auto;
     margin-top:10px;
+    color:white;
 }
 
 @media screen and (max-width:600px){
