@@ -2,8 +2,7 @@ const socket = io();
 const textarea = document.getElementById('message');
 const messagearea = document.getElementById('chat-box');
 var name;
-var audio = new Audio('./sentmessage.mp3');
-var audio2 = new Audio('./mail_sent.mp3')
+
 do{
     if(name.toLowerCase().indexOf('chotu') != -1){
         name =prompt("BETE APNA NAME TYPE KRLE");
@@ -19,7 +18,8 @@ textarea.addEventListener('keyup',(e) =>{
     }
     
 })
-
+var audio = new Audio('./sentmessage.mp3');
+var audio2 = new Audio('./mail_sent.mp3')
 function sendMessage(msg){
     Scrolltobottom();
     let msgg = {
