@@ -1,14 +1,14 @@
 const socket = io();
 const textarea = document.getElementById('message');
 const messagearea = document.getElementById('chat-box');
-let name;
+var name;
 
 do{
-    
-    name = prompt("Enter your name ");
     if(name.toLowerCase().indexOf('chotu') != -1){
         name =prompt("BETE APNA NAME TYPE KRLE");
     }
+    name = prompt("Enter your name ");
+    
 }while(name.toLowerCase().indexOf('chotu') != -1 || !name );
 socket.emit('joined-chat',name);
 textarea.addEventListener('keyup',(e) =>{
@@ -67,4 +67,10 @@ function Scrolltobottom(){
 
 socket.on('joined',namee=>{
     joinedChat(namee);
+})
+
+socket.on('db-messages',data=>{
+    data.forEach(d=>{
+        appendMessage(d,"outgoing-msg");
+    })
 })
